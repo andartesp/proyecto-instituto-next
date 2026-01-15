@@ -1,20 +1,26 @@
-import Link from 'next/link';
-import './globals.css'; // Esto es para el diseño
+import "./globals.css";
+import Navbar from "../components/Navbar";
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="es">
-      <body className="bg-black text-white">
-        <nav className="p-4 bg-zinc-900 flex justify-between items-center border-b border-red-700">
-          <h1 className="font-bold">IES CURA VALERA</h1>
-          <ul className="flex gap-4">
-            <li><Link href="/">Inicio</Link></li>
-            <li><Link href="/noticias">Noticias</Link></li>
-            <li><Link href="/contacto">Contacto</Link></li>
-          </ul>
-        </nav>
+      <body className="bg-[#0f0f0f] text-white">
+        <header className="py-10 text-center border-b border-zinc-800">
+          <h1 className="text-3xl font-serif tracking-widest uppercase">IES CURA VALERA</h1>
+          <p className="text-blue-400 text-xs font-bold tracking-widest mt-2">HUÉRCAL-OVERA (ALMERÍA)</p>
+        </header>
+
+        <Navbar />
+
+        <main>{children}</main>
         
-        {children}
+        <footer className="p-10 mt-10 bg-zinc-900 text-center text-zinc-500 text-sm border-t border-zinc-800">
+          © 2026 IES Cura Valera | Proyecto Next.js
+        </footer>
       </body>
     </html>
   );

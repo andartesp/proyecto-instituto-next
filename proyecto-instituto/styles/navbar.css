@@ -1,0 +1,49 @@
+.menu-item {
+  position: relative;
+  list-style: none;
+}
+
+.menu-link {
+  padding: 1.25rem 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.menu-link:hover {
+  color: #ef4444;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111;
+  border: 1px solid #27272a;
+  border-radius: 0.5rem;
+  min-width: 260px;
+  display: none;
+  z-index: 100;
+}
+
+.menu-item:hover .dropdown {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background: #1f1f1f;
+  color: #ef4444;
+}
+
+.icon-plus {
+  font-size: 0.75rem;
+}
